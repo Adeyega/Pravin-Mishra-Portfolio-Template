@@ -38,5 +38,47 @@ Add this line (example):
 ```html
 <p><strong>Deployed by:</strong> DMI Cohort 2 | Rahul Sharma | Group 4 | Week 1 | 16-01-2026</p>
 ```
+#### Footer Implementation
+
+#### Footer Requirement
+
+The footer was updated to display:
+
+The website/portfolio name
+
+Copyright text
+
+The current year, generated dynamically so it updates automatically every year without manual changes
+
+This ensures the site always looks up to date and professional.
+
+How the Date Is Generated
+
+The year in the footer is generated using JavaScript.
+Instead of hard-coding a year (e.g. 2024), JavaScript retrieves the current year from the user’s system date and inserts it into the footer when the page loads.
+
+This approach:
+
+Prevents outdated copyright years
+
+Requires no future manual updates
+
+Follows best practices for modern web development
+
+### Code Snippet
+
+#### Footer HTML
+```html
+<footer>
+  <p>
+    © <span id="year"></span> Adegboyega Ogunsemoyin. All rights reserved.
+  </p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
 
 ✅ This proof must be visible in your browser screenshot submission.
