@@ -602,11 +602,40 @@
       <div class="footer-bottom">
         <p>© <span id="year"></span> Pravin Mishra. All rights reserved.</p>
         <p>Crafted with <span>cloud</span> excellence by Pravin Mishra</p>
-	      <p>Pravin Mishra Portfolio v1.0 — Deployed on 05 02 2026 — By Adegboyega Bamidele Ogunsemoyin<p>
+	      <p>
+          Pravin Mishra Portfolio v1.0 — Deployed on <span id="deployDate"></span> — By Adegboyega Bamidele Ogunsemoyin
+        </p>
       </div>
 
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+    console.log("Footer JS loaded ✅");
+
+    // Set current year
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Set deploy date
+    const deployDateEl = document.getElementById("deployDate");
+    if (deployDateEl) {
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+
+      deployDateEl.textContent = formattedDate;
+    }
+
+    });
+  </script>
 
 
 
