@@ -8,16 +8,24 @@
 
 body {
   background: #fff;
+  font-size: 16px;         /* readable default font size */
+  line-height: 1.6;        /* comfortable spacing for paragraphs */
+  color: #222;             /* high contrast on white background */
+  padding-top: 60px;       /* prevent content hiding under fixed navbar */
+
 }
 
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.95);
+  background: rgba(0,0,0,0.95);   /* good contrast */
+  color: #fff;                     /* ensure text is readable */
   backdrop-filter: blur(8px);
   z-index: 1000;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #444;   /* slightly lighter for subtle border */
+  padding: 15px 20px;              /* better spacing inside navbar */
+  font-size: 16px;
 }
 
 .nav-container {
@@ -1037,9 +1045,17 @@ section {
 
 /* FOOTER */
 .footer {
-  background: #000;
-  color: #fff;
-  padding: 80px 20px 40px;
+  background-color: #222;     /* dark background for contrast */
+  color: #fff;                /* readable text */
+  text-align: center;
+  padding: 25px 15px;         /* enough spacing top/bottom and sides */
+  font-size: 16px;            /* readable font */
+  line-height: 1.5;
+}
+
+footer p {
+  margin: 5px 0;              /* small spacing between lines */
+
 }
 
 .footer-container {
@@ -1133,10 +1149,21 @@ section {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;       /* slightly smaller for mobile */
   }
+
+  .navbar {
+    padding: 10px 15px;    /* smaller navbar padding on mobile */
+    font-size: 15px;
+  }
+
+  footer {
+    padding: 20px 10px;    /* smaller footer padding */
+    font-size: 15px;
+  }
+
 
   .footer-bottom {
     flex-direction: column;
